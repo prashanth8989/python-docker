@@ -1,7 +1,7 @@
 # First stage: build the Java application <—----->
 FROM maven:3.8.1-jdk-11-slim AS build
 WORKDIR /app
-COPY pom.xml .
+COPY pom.xml .  # Corrected line
 RUN mvn dependency:go-offline
 COPY src/ src/
 RUN mvn package
